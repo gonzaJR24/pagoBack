@@ -9,26 +9,30 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Table(name = "reporte_doctor")
+@Table(name = "REPORTE_PRODUCCION")
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class DoctorReportEntity {
-
+public class HrReportEntity {
   @Id
   private int numero_orden;
 
-  private String nombre_paciente;
-  private int hcu;
-
-  @Column(name = "fecha_atencion")
+  @Column
   @Temporal(TemporalType.DATE)
-  private Date fecha_atencion;
+  private Date fecha_facturacion;
+
+  private int hcu;
 
   private String descripcion;
 
+  private String status;
+
   private int costo;
 
+  private String sucursal;
+
   private String proveedor;
+
+  public HrReportEntity() {
+  }
 }
